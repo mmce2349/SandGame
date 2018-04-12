@@ -102,7 +102,10 @@ public class SandLab
     		grid[randomLocationX][randomLocationY] = EMPTY;
     		 grid[randomLocationX + 1][randomLocationY] = SAND;
     }
-    //else if(grid[randomLocationX][randomLocationY] == WATER && grid[randomLoacionX] )
+    else if(grid[randomLocationX][randomLocationY] == WATER && grid[randomLocationX][randomLocationY] == EMPTY )
+    {
+    	
+    }
   }
   
   //do not modify this method!
