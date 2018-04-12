@@ -126,7 +126,7 @@ public class SandLab
     		grid[randomLocationX][randomLocationY] = WATER;
 		 grid[randomLocationX + 1][randomLocationY] = SAND;
     }
-  }
+  } 
   
   //do not modify this method!
   public void run()
