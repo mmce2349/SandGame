@@ -27,10 +27,13 @@ public class SandLab
     String[] names;
     // Change this value to add more buttons
     //Step 4,6
-    names = new String[2];
+    names = new String[5];
     // Each value needs a name for the button
     names[EMPTY] = "Empty";
     names[METAL] = "Metal";
+    names[SAND] = "Sand";
+    names[WATER] = "Water";
+    names[GAS] = "Gas";
     
     //1. Add code to initialize the data member grid with same dimensions
     grid = new int [numRows][numCols];
@@ -90,8 +93,14 @@ public class SandLab
     //The scalar refers to how big the value could be
     //int someRandom = (int) (Math.random() * scalar)
     //remember that you need to watch for the edges of the array
+    int randomLocationX = (int)(Math.random() * grid.length);
+    int randomLocationY = (int)(Math.random() * grid[0].length);
+    int finalLocation = grid[randomLocationX][randomLocationY];
     
-    
+    if(finalLocation == SAND && (randomLocationY-1) ==EMPTY)
+    {
+    		 grid[randomLocationX][randomLocationY - 1] = SAND;
+    }
   }
   
   //do not modify this method!
