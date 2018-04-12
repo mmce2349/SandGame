@@ -93,14 +93,16 @@ public class SandLab
     //The scalar refers to how big the value could be
     //int someRandom = (int) (Math.random() * scalar)
     //remember that you need to watch for the edges of the array
-    int randomLocationX = (int)(Math.random() * grid.length);
+    int randomLocationX = (int)(Math.random() * (grid.length -1));
     int randomLocationY = (int)(Math.random() * grid[0].length);
-    int finalLocation = grid[randomLocationX][randomLocationY];
     
-    if(finalLocation == SAND && (randomLocationY-1) ==EMPTY)
+    
+    if(grid[randomLocationX][randomLocationY] == SAND && grid[randomLocationX + 1][randomLocationY] == EMPTY)
     {
-    		 grid[randomLocationX][randomLocationY - 1] = SAND;
+    		grid[randomLocationX][randomLocationY] = EMPTY;
+    		 grid[randomLocationX + 1][randomLocationY] = SAND;
     }
+    //else if(grid[randomLocationX][randomLocationY] == WATER && grid[randomLoacionX] )
   }
   
   //do not modify this method!

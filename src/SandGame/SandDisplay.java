@@ -27,7 +27,7 @@ public class SandDisplay extends JComponent implements MouseListener,
     this.numCols = numCols;
     tool = 1;
     mouseLoc = null;
-    speed = computeSpeed(50);
+    speed = computeSpeed(1);
     
     //determine cell size
     cellSize = Math.max(1, 600 / Math.max(numRows, numCols));
