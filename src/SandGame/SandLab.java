@@ -8,6 +8,9 @@ public class SandLab
   //add constants for particle types here
   public static final int EMPTY = 0;
   public static final int METAL = 1;
+  public static final int SAND = 2;
+  public static final int WATER = 3;
+  public static final int GAS = 4;
   
   //do not add any more fields below
   private int[][] grid;
@@ -48,7 +51,34 @@ public class SandLab
   {
       //Step 3
    //Hint - use a nested for loop
-    
+    for(int row = 0; row < grid.length; row++)
+    {
+    		for(int col= 0; col< grid[0].length; col++)
+    		{
+    			Color black = Color.BLACK;
+    			Color gray = Color.GRAY;
+    			if(grid[row][col] == EMPTY)
+    			{
+    				display.setColor(row, col, black);
+    			}
+    			else if(grid[row][col] == METAL)
+    			{
+    				display.setColor(row, col, gray);
+    			}
+    			else if(grid[row][col] == SAND)
+    			{
+    				display.setColor(row, col, Color.YELLOW);
+    			}
+    			else if(grid[row][col] == WATER)
+    			{
+    				display.setColor(row, col, Color.BLUE);
+    			}
+    			else if(grid[row][col] == GAS)
+    			{
+    				display.setColor(row, col, Color.WHITE);
+    			}
+    		}
+    }
   }
 
   //Step 5,7
