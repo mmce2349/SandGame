@@ -126,11 +126,25 @@ public class SandLab
     		grid[randomLocationX][randomLocationY] = WATER;
 		 grid[randomLocationX + 1][randomLocationY] = SAND;
     }
-    else if(grid[randomLocationX][randomLocationY] == EMPTY && grid[randomLocationX + 1][randomLocationY] == GAS)
+   
+    else if (grid[randomLocationX][randomLocationY] == GAS)
     {
-		grid[randomLocationX][randomLocationY] = GAS;
-		 grid[randomLocationX + 1][randomLocationY] = EMPTY;
-}
+    	if(grid[randomLocationX + 1][randomLocationY] == EMPTY)
+   	 {
+   		 grid[randomLocationX][randomLocationY] = EMPTY;
+   		 grid[randomLocationX - 1][randomLocationY] = GAS;
+   	 }
+   	 else if(grid[randomLocationX ][randomLocationY + 1] == EMPTY)
+   	 {
+   		 grid[randomLocationX][randomLocationY] = EMPTY;
+   		 grid[randomLocationX ][randomLocationY + 1] = GAS;
+   	 }
+   	 else if(grid[randomLocationX ][randomLocationY - 1] == EMPTY)
+   	 {
+   		 grid[randomLocationX][randomLocationY] = EMPTY;
+   		 grid[randomLocationX ][randomLocationY - 1] = GAS;
+   	 }
+    }
   } 
   
   //do not modify this method!
